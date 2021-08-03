@@ -1,0 +1,307 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菊島築跡</title>
+<style type="text/css">
+#container {
+	width: 1280px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#header {
+}
+#left {
+	float: left;
+	width: 250px;
+	height: 800px;
+}
+#center {
+	background-color: #FFF;
+	background-image: url(picture/bg.jpg);
+	height: auto;
+	width: 1030px;
+	float: right;
+	background-attachment: fixed;
+	margin-bottom: auto;
+	font-family: "微軟正黑體";
+	font-size: 18px;
+	text-decoration: blink;
+}
+.風櫃線 {
+	color: #F00;
+}
+.風櫃終點站 {
+	color: #F00;
+}
+.山水內站 {
+	color: #F00;
+}
+.山水內站 {
+	color: #F00;
+}
+#container #center div {
+	font-weight: bold;
+	font-family: "微軟正黑體";
+	font-size: 20px;
+}
+.風櫃牌樓站 {
+	color: #F00;
+	font-family: "微軟正黑體";
+}
+.嵵裡海水浴場站 {
+	color: #F00;
+	font-family: "微軟正黑體";
+}
+#apDiv1 {
+	position: absolute;
+	width: 120px;
+	height: 120px;
+	z-index: 1;
+	left: 1129px;
+	top: 1084px;
+}
+#apDiv2 {
+	position: absolute;
+	width: 120px;
+	height: 120px;
+	z-index: 2;
+}
+#apDiv11 {	position: absolute;
+	width: 200px;
+	height: 115px;
+	z-index: 4;
+	font-family: "微軟正黑體";
+	font-weight: bold;
+	text-align: center;
+	font-size: 16px;
+}
+#apDiv3 {	position: absolute;
+	width: 200px;
+	height: 115px;
+	z-index: 5;
+}
+</style>
+<script type="text/javascript">
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function flevDivPositionValue(sDiv, sProperty) { // v2.1, Marja Ribbers-de Vroed, FlevOOware
+	this.opera = (window.opera); // Opera 5+
+	this.ns4 = (document.layers); // Netscape 4.x
+	this.ns6 = (document.getElementById && !document.all && !this.opera); // Netscape 6+
+	this.ie = (document.all);  // Internet Explorer 4+
+    var sValue = ""; docObj = eval("MM_findObj('" + sDiv + "')"); if (docObj == null) {return 0;}
+	if ((sProperty == "left") || (sProperty == "top")) {
+		if (!this.ns4) {docObj = docObj.style;} 
+		sValue = eval("docObj." + sProperty);
+		if ((this.ie) && (sValue == "")) { // IE (on PC) bug with nested layers
+			if (sProperty == "top") { sValue = eval(sDiv + ".offsetTop"); } 
+			else { sValue = eval(sDiv + ".offsetLeft"); } 
+		};
+	}
+	else {
+		if (this.opera) {
+			docObj = docObj.style;
+			if (sProperty == "height") { sValue = docObj.pixelHeight; } 
+			else if (sProperty == "width") { sValue = docObj.pixelWidth; } 
+		}
+		else if (this.ns4) {sValue = eval("docObj.clip." + sProperty);} 
+		else if (this.ns6) {sValue = document.defaultView.getComputedStyle(docObj, "").getPropertyValue(sProperty); } 
+	    else if (this.ie) { 
+			if (sProperty == "width") { sValue = eval(sDiv + ".offsetWidth"); } 
+			else if (sProperty == "height") { sValue = eval(sDiv + ".offsetHeight"); } 
+		}
+   	}
+	sValue = (sValue == "") ? 0 : sValue; 
+	if (isNaN(sValue)) { if (sValue.indexOf('px') > 0) { sValue = sValue.substring(0,sValue.indexOf('px')); } } 
+	return parseInt(sValue); 
+}
+
+function flevPersistentLayer() { // v3.3, Marja Ribbers-de Vroed, FlevOOware
+	var sD = arguments[0], oD = eval("MM_findObj('" + sD + "')"), iWW, iWH, iSX, iSY, iT = 10, sS = "";
+	if (!document.layers) {oD = oD.style;}
+	if (oD.tmpTimeout != null) {clearTimeout(oD.tmpTimeout);}
+	var sXL = arguments[1], sXC = arguments[2], sXR = arguments[3], sYT = arguments[4], sYC = arguments[5], sYB = arguments[6];
+	var iS = (arguments.length > 7) ? parseInt(arguments[7]) : 0, iPx = (arguments.length > 8) ? parseInt(arguments[8]) : 0;
+	if (window.innerWidth) { // NS4, NS6 and Opera
+		var oW = window; iWW = oW.innerWidth; iWH = oW.innerHeight; iSX = oW.pageXOffset; iSY = oW.pageYOffset; }
+	else if (document.documentElement && document.documentElement.clientWidth) { // IE6 in standards compliant mode
+		var oDE = document.documentElement; iWW = oDE.clientWidth; iWH = oDE.clientHeight; iSX = oDE.scrollLeft; iSY = oDE.scrollTop; }
+	else if (document.body) { // IE4+
+		var oDB = document.body; iWW = oDB.clientWidth; iWH = oDB.clientHeight; iSX = oDB.scrollLeft; iSY = oDB.scrollTop; }
+	else {return;}
+	var iCX = iNX = flevDivPositionValue(sD, 'left'), iCY = iNY = flevDivPositionValue(sD, 'top');
+	if (sXL != "") {iNX = iSX + parseInt(sXL);} 
+	else if (sXC != "") {iNX = Math.round(iSX + (iWW/2) - (flevDivPositionValue(sD, 'width')/2));}
+	else if (sXR != "") {iNX = iSX + iWW - (flevDivPositionValue(sD, 'width') + parseInt(sXR));}
+	if (sYT != "") {iNY = iSY + parseInt(sYT);}
+	else if (sYC != "") {iNY = Math.round(iSY + (iWH/2) - (flevDivPositionValue(sD, 'height')/2));}
+	else if (sYB != "") {iNY = iSY + (iWH - flevDivPositionValue(sD, 'height') - parseInt(sYB));}
+	if ((iCX != iNX) || (iCY != iNY)) {
+		if (iS > 0) {
+			if (iPx > 0) { iT = iS;
+				var iPxX = iPx, iPxY = iPx, iMX = Math.abs(iCX - iNX), iMY = Math.abs(iCY - iNY);
+				// take care of diagonal movement
+				if (iMX < iMY) {iPxY = (iMX != 0) ? ((iMY/iMX)*iPx) : iPx;}
+				else {iPxX = (iMY != 0) ? ((iMX/iMY)*iPx) : iPx;}
+				if (iPxX >= iMX) {iPxX = Math.min(Math.ceil(iPxX), iPx);}
+				if (iPxY >= iMY) {iPxY = Math.min(Math.ceil(iPxY), iPx);}
+				// temporary X/Y coordinates
+				if ((iCX < iNX) && (iCX + iPxX < iNX)) {iNX = iCX + iPxX;}
+				if ((iCX > iNX) && (iCX - iPxX > iNX)) {iNX = iCX - iPxX;}
+				if ((iCY < iNY) && (iCY + iPxY < iNY)) {iNY = iCY + iPxY;}
+				if ((iCY > iNY) && (iCY - iPxY > iNY)) {iNY = iCY - iPxY;} }
+			else { 
+				var iMX = ((iNX - iCX) / iS), iMY = ((iNY - iCY) / iS); 
+				iMX = (iMX > 0) ? Math.ceil(iMX) : Math.floor(iMX); iNX = iCX + iMX; 
+				iMY = (iMY > 0) ? Math.ceil(iMY) : Math.floor(iMY); iNY = iCY + iMY; } }
+		if ((parseInt(navigator.appVersion)>4 || navigator.userAgent.indexOf("MSIE")>-1) && (!window.opera)) {sS="px";}
+		if (iMX != 0) {eval("oD.left = '" + iNX + sS + "'");}
+		if (iMY != 0) {eval("oD.top = '" + iNY + sS + "'");} }
+	var sF = "flevPersistentLayer('" + sD + "','" + sXL + "','" + sXC + "','" + sXR + "','" + sYT + "','" + sYC + "','" + sYB + "'," + iS + "," + iPx + ")";
+	oD.tmpTimeout = setTimeout(sF,10);
+}
+
+function flevInitPersistentLayer() { // v3.3, Marja Ribbers-de Vroed, FlevOOware
+	if (arguments.length < 8) {return;}
+	var sD = arguments[0]; if (sD == "") {return;}
+	var	oD = eval("MM_findObj('" + sD + "')"); if (!oD) {return;}
+	var iCSS = parseInt(arguments[1]);
+	var sXL = arguments[2], sXC = arguments[3], sXR = arguments[4], sYT = arguments[5], sYC = arguments[6], sYB = arguments[7];
+	var iS = (arguments.length > 8) ? parseInt(arguments[8]) : 0, iPx = (arguments.length > 9) ? parseInt(arguments[9]) : 0;
+	if (iCSS != 0) { if (!document.layers) {oD = oD.style;} sXL = parseInt(oD.left), sYT = parseInt(oD.top);}
+	var sF = "flevPersistentLayer('" + sD + "','" + sXL + "','" + sXC + "','" + sXR + "','" + sYT + "','" + sYC + "','" + sYB + "'," + iS + "," + iPx + ")";
+	eval(sF);
+}
+</script>
+</head>
+
+<body onLoad="flevInitPersistentLayer('apDiv1',0,'','','30','','','10');flevInitPersistentLayer('apDiv2',0,'','','160','','','10');flevInitPersistentLayer('apDiv3',0,'40','','','40','','');flevInitPersistentLayer('apDiv11',0,'40','','','10','','')">
+<div id="container">
+  <div align="center"><a id="top"></a><img src="picture/title.png" width="1024" height="280" longdesc="picture/title.png" align="right"></div>
+  <div id="left">
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <div id="apDiv11">最佳瀏覽解析度1360*768</div>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <div id="apDiv3"><a href="mg.html"><img src="picture/b/mg.png" alt="" width="200" height="88" longdesc="picture/b/mg.png"></a><a href="hx.html"><img src="picture/b/hx.png" alt="" width="200" height="92" longdesc="picture/b/hx.png"></a><a href="bs.html"><img src="picture/b/bs.png" alt="" width="200" height="89" longdesc="picture/b/bs.png"></a><a href="xy.html"><img src="picture/b/xy.png" alt="" width="200" height="91" longdesc="picture/b/xy.png"></a><a href="line.html"><img src="picture/b/line.png" alt="" width="200" height="90" longdesc="picture/b/line.png"></a><a href="abw.html"><img src="picture/b/abw.png" alt="" width="200" height="91" longdesc="picture/b/abw.png"></a></div>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <br>
+  </div>
+<div id="center">
+    <div align="center">
+      <p>&nbsp;</p>
+      <p>風櫃洞位於澎湖右下的風櫃半島，</p>
+      <p>可坐<span class="風櫃線">風櫃線</span>公車至<span class="風櫃牌樓站">風櫃牌樓站</span>，或是<span class="風櫃終點站">風櫃終點站</span>下車，</p>
+      <p>一下車便可以看見風櫃的觀景臺啦！ <br>
+      </p>
+      <p><img src="picture/landscape/風櫃4拷貝.jpg" width="800" height="601" longdesc="picture/landscape/風櫃4拷貝.jpg"></p>
+      <div id="apDiv1"><a href="mgfg.html#top"><img src="picture/b/tp.png" width="120" height="118" longdesc="picture/一些按鈕/TP.png"></a></div>
+      <p>&nbsp;</p>
+      <p><img src="picture/landscape/風櫃6拷貝.jpg" width="800" height="601" longdesc="picture/landscape/風櫃6拷貝.jpg"></p>
+      <p>&nbsp;</p>
+      <p>風櫃洞是澎湖地區最具代表的海蝕溝，當漲潮時，海浪使岩洞內空氣受擠壓將海水噴出，</p>
+      <p>便發出陣陣濤聲，如風箱鼓風一般，故以「風櫃聽濤」的美稱聞名遠播。 </p>
+      <p><img src="picture/landscape/風櫃16拷貝.jpg" width="800" height="601" longdesc="picture/landscape/風櫃16拷貝.jpg"></p>
+      <p>&nbsp;</p>
+      <p><img src="picture/landscape/風櫃拷貝.jpg" width="800" height="601" longdesc="picture/landscape/風櫃拷貝.jpg"></p>
+      <p>&nbsp;</p>
+      <p><img src="picture/landscape/風櫃10拷貝.jpg" width="800" height="601" longdesc="picture/landscape/風櫃10拷貝.jpg"></p>
+      <p>&nbsp;</p>
+      <p>在去風櫃的路上還會經過兩個沙灘：山水沙灘、嵵裡沙灘 </p>
+      <p><br>
+        山水沙灘在<span class="山水內站">山水內站</span>，不過遊客要注意一點，</p>
+      <p><span class="山水內站">山水內站</span>並不是每一班車都有到達，大家要先看清楚班車時間再搭乘喔！ </p>
+      <table width="600" border="1">
+        <tr>
+          <td colspan="10" bgcolor="#FFFFFF">馬公往風櫃</td>
+        </tr>
+        <tr>
+          <td width="68" bgcolor="#FFFFFF"><div align="center">馬公<br>
+            總站</div></td>
+          <td width="52" bgcolor="#FFFFFF"><div align="center">09:50</div></td>
+          <td width="52" bgcolor="#FFFFFF"><div align="center">10:50</div></td>
+          <td width="52" bgcolor="#FFFFFF"><div align="center">12:05</div></td>
+          <td width="52" bgcolor="#FFFFFF"><div align="center">13:30</div></td>
+          <td width="52" bgcolor="#FFFFFF"><div align="center">15:10</div></td>
+          <td width="52" bgcolor="#FFFFFF"><div align="center">16:30</div></td>
+          <td width="52" bgcolor="#FFFFFF"><div align="center">19:00</div></td>
+          <td width="52" bgcolor="#FFFFFF"><div align="center">20:30</div></td>
+          <td width="52" bgcolor="#FFFFFF"><div align="center">21:45</div></td>
+        </tr>
+        <tr>
+          <td bgcolor="#FFFFFF"><div align="center">山水<br>
+            內站</div></td>
+          <td bgcolor="#FFFFFF"><div align="center">10:13</div></td>
+          <td bgcolor="#FFFFFF"><div align="center">11:13</div></td>
+          <td bgcolor="#FFFFFF"><div align="center">12:33</div></td>
+          <td bgcolor="#FFFFFF"><div align="center">13:52</div></td>
+          <td bgcolor="#FFFFFF"><div align="center">15:32</div></td>
+          <td bgcolor="#FFFFFF"><div align="center">16:53</div></td>
+          <td bgcolor="#FFFFFF"><div align="center">19:23</div></td>
+          <td bgcolor="#FFFFFF"><div align="center">20:53</div></td>
+          <td bgcolor="#FFFFFF"><div align="center">22:07</div></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <table width="600" border="1">
+        <tr>
+          <td colspan="10" bgcolor="#FFFFFF">風櫃往馬公</td>
+        </tr>
+        <tr>
+          <td width="68" bgcolor="#FFFFFF"><div align="center">山水<br>
+            內站</div></td>
+          <td width="52" bgcolor="#FFFFFF"><div align="center">06:13</div></td>
+          <td width="52" bgcolor="#FFFFFF"><div align="center">10:50</div></td>
+          <td width="52" bgcolor="#FFFFFF"><div align="center">11:47</div></td>
+          <td width="52" bgcolor="#FFFFFF"><div align="center">13:00</div></td>
+          <td width="52" bgcolor="#FFFFFF"><div align="center">14:23</div></td>
+          <td width="52" bgcolor="#FFFFFF"><div align="center">16:08</div></td>
+          <td width="52" bgcolor="#FFFFFF"><div align="center">17:25</div></td>
+          <td width="52" bgcolor="#FFFFFF"><div align="center">19:54</div></td>
+          <td width="52" bgcolor="#FFFFFF"><div align="center">21:24</div></td>
+        </tr>
+        <tr>
+          <td bgcolor="#FFFFFF"><div align="center">馬公<br>
+            總站</div></td>
+          <td bgcolor="#FFFFFF"><div align="center">06:46</div></td>
+          <td bgcolor="#FFFFFF"><div align="center">11:21</div></td>
+          <td bgcolor="#FFFFFF"><div align="center">12:23</div></td>
+          <td bgcolor="#FFFFFF"><div align="center">13:26</div></td>
+          <td bgcolor="#FFFFFF"><div align="center">14:52</div></td>
+          <td bgcolor="#FFFFFF"><div align="center">16:42</div></td>
+          <td bgcolor="#FFFFFF"><div align="center">17:55</div></td>
+          <td bgcolor="#FFFFFF"><div align="center">20:22</div></td>
+          <td bgcolor="#FFFFFF"><div align="center">21:46</div></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <p>嵵裡沙灘在<span class="嵵裡海水浴場站">嵵裡海水浴場站</span>下車，這理由珊瑚及貝殼碎片組成，早年為居民漁場，附近還有風積砂丘景觀！ </p>
+      <p><img src="picture/landscape/蒔裡拷貝.jpg" width="800" height="601" longdesc="picture/landscape/蒔裡拷貝.jpg"></p>
+      <p>&nbsp;</p>
+      <p><img src="picture/landscape/蒔裡6拷貝.jpg" width="800" height="601" longdesc="picture/landscape/蒔裡6拷貝.jpg"></p>
+      <p>&nbsp;</p>
+    </div>
+  </div>
+  <div align="center"></div>
+</div>
+<div id="apDiv2"><a href="index1.html"><img src="picture/b/home.png" width="120" height="118" longdesc="picture/一些按鈕/HB.png"></a></div>
+</body>
+</html>
